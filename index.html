@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,137 +8,200 @@
     <style>
       body {
         font-family: 'Open Sans', sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+      }
+
+      :root {
+        --black: #fff;
+      }
+
+
+      .nx-products div{
+        font-size: 20px;
+
+      }
+      .nx-products{
+        display: flex;
+        gap: 20px;
+
+      }
+      .nx-products a{
+        color: #000;
+      }
+
+      #search-button {
+        color: white;
+        padding: 8px 14px;
+        font-size: 32px;
+        background-color: black;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .search {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        box-sizing: border-box;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .Xx {
+        position: absolute;
+        top: 3%;
+        left: 4%;
+        transform: scale(0.7);
+      }
+
+      .boxSearch {
+        max-width: 640px;
+        width: 100%;
+      }
+
+      .logo {
+        text-align: right;
+        position: relative;
+        left: 351px;
+      }
+
+   input {
+    border: 1px solid #000;
+    max-width: 640px;
+    width: 100%;
+    height: 52px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    color: #000;
+    padding: 18px;
+    transform: skew(-20deg);
+}
+
+
+
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 17px;
+        margin: 18px 0;
+      }
+
+      .circleBlack {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .iconSearch {
+        position: relative;
+        top: 9px;
+        left: 6px;
+      }
+
+      .iconBurger {
+        border-radius: 100%;
+        width: 64px;
+        height: 64px;
+        background: #ffa600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 34px;
+        right: 75px;
+      }
+
+     
+
+     
+
+      .lineBurger::before {
+        top: -15px;
+      }
+
+      .lineBurger::after {
+        top: 15px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 10px;
+      }
+      
     </style>
   </head>
   <body>
-    <style>* {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      list-style: none;
-    }
-    .search {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    
-    .Xx {
-      position: absolute;
-      top: 3%;
-      left: 4%;
-    }
-    
-    .boxSearch {
-      /* display: flex;
-      flex-direction: column;
-      align-items: center; */
-      max-width: 640px;
-      width: 100%;
-    }
-    .logo {
-      text-align: right;
-      position: relative;
-      left: 351px;
-    }
-    
-    input {
-      border: 1px solid #000;
-      width: 640px;
-      height: 52px;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 100%;
-      color: #000;
-      padding: 18px;
-    }
-    
-    span {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      column-gap: 17px;
-      margin: 18px 0;
-    }
-    
-    .circleBlack {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background-color: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .iconSearch {
-      position: relative;
-      top: 9px;
-      left: 6px;
-    }
-    
-    .iconBurger {
-      border-radius: 100%;
-      width: 64px;
-      height: 64px;
-      background: #ffa600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      bottom: 34px;
-      right: 75px;
-    }
-    
-    .lineBurger {
-      width: 42px;
-      height: 6px;
-      background: #000;
-      position: relative;
-    }
-    
-    .lineBurger::before,
-    .lineBurger::after {
-      content: "";
-      position: absolute;
-      width: 42px;
-      height: 6px;
-      background: #000;
-    }
-    
-    .lineBurger::before {
-      top: -15px; /* Расстояние до первой линии */
-    }
-    
-    .lineBurger::after {
-      top: 15px; /* Расстояние до второй линии */
-    }
-    </style>
     <section class="search">
       <img class="Xx" src="X x.png" alt="" />
 
       <div class="container">
-        <div class="boxSearch">
-          <h1 style="font-size: 64px; font-weight: bold;">NOBOX</h1>
-          <span>
-            <input type="text" placeholder="Начать поиск..." />
-            <div class="circleBlack">
-              <img class="iconSearch" src="Group 9.png" alt="" />
+        <form class="boxSearch">
+          <h1  style="font-size: 64px; font-weight: bold; display: flex;">
+            <div style="color: red;">no</div>
+            <div style=" color:red ;">box</div>
+            <div >
+
+              ●
             </div>
+            <div style="color: #ffa600;">kg</div>
+          </h1>
+          <span>
+            <input type="search" placeholder="Поисковая система..." />
+            <label style="border-radius: 40px;" id="search-button" for="start-search">-></label>
+            <input id="start-search" type="submit" class="circleBlack">
+            </input>
           </span>
-          <p>.NET Среней Азии</p>
-        </div>
+        </form>
+      </div>  
+      <div class="nx-products">
+        <div><a target="_blank" href="https://rent.nobox.kg?from=nobox.kg">
+
+          <div>RENT</div>
+        </a></div>
+        <div><a target="_blank" href="https://rent.nobox.kg?from=nobox.kg">
+
+          <div>DRIVE / ДОСТАВКА / TAXI</div>
+        </a></div>
+        <a target="_blank" href="https://www.2gis.kg?from=nobox.kg">
+
+          <div>2GIS</div>
+        </a>
       </div>
       <div class="iconBurger">
-        <div class="lineBurger"></div>
+        <div style="font-size: 42px; color: black;" class="lineBurger">☰</div>
       </div>
     </section>
+    <footer>
+      POWERED BY <h2>
+
+        NO-OX.IO
+      </h2> 
+<br>
+<br>
+      and inspired by -> ME :D
+      <br>
+      <br>
+      
+      hello, world alpha 0.3</footer>
   </body>
 </html>
